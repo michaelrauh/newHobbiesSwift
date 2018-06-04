@@ -12,7 +12,6 @@
 		5A9926921FBBD46300662D97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A9926901FBBD46300662D97 /* Main.storyboard */; };
 		5A9926941FBBD46300662D97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A9926931FBBD46300662D97 /* Assets.xcassets */; };
 		5A9926971FBBD46300662D97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A9926951FBBD46300662D97 /* LaunchScreen.storyboard */; };
-		5A9926A21FBBD46300662D97 /* newHobbiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9926A11FBBD46300662D97 /* newHobbiesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +33,6 @@
 		5A9926961FBBD46300662D97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A9926981FBBD46300662D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A99269D1FBBD46300662D97 /* newHobbiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = newHobbiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A9926A11FBBD46300662D97 /* newHobbiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newHobbiesTests.swift; sourceTree = "<group>"; };
 		5A9926A31FBBD46300662D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,7 +88,6 @@
 		5A9926A01FBBD46300662D97 /* newHobbiesTests */ = {
 			isa = PBXGroup;
 			children = (
-				5A9926A11FBBD46300662D97 /* newHobbiesTests.swift */,
 				5A9926A31FBBD46300662D97 /* Info.plist */,
 			);
 			path = newHobbiesTests;
@@ -141,7 +138,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Surjective;
 				TargetAttributes = {
 					5A9926881FBBD46300662D97 = {
@@ -208,7 +205,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A9926A21FBBD46300662D97 /* newHobbiesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +252,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -263,6 +260,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -313,6 +311,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -320,6 +319,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
