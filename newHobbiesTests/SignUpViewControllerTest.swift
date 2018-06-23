@@ -31,6 +31,10 @@ class SignUpViewControllerTests: QuickSpec {
                     it("navigates to the selector view") {
                         expect(navigator.invoked(function: "show")).to(beTrue())
                     }
+                    
+                    it("saves the ID to the session") {
+                        
+                    }
                 }
                 
                 describe("when the view model has no user ID") {
@@ -49,12 +53,15 @@ class SignUpViewControllerTests: QuickSpec {
                     subject.genIDButton.sendActions(for: .touchUpInside)
                 }
                 
-                it("saves the ID") {
-                    expect(viewModel.invoked(function: "saveID")).to(beTrue())
+                it("requests an ID from the view model") {
+                    expect(viewModel.invoked(function: "requestID")).to(beTrue())
                 }
                 
-                it("navigates to the selector view") {
-                    expect(navigator.invoked(function: "show")).to(beTrue())
+                describe("onSuccess") {
+                    it("goes to the next screen") {
+                        subject.onSuccess()
+                        expect(navigator.invoked(function: "show")).to(beTrue())
+                    }
                 }
             }
         }
@@ -80,5 +87,9 @@ class MockViewModel: SignUpViewModel, Mock {
     
     override func userHasID() -> Bool {
         return value(forFunction: "userHasID") ?? false
+    }
+    
+    override func requestID() {
+        record(function: "requestID")
     }
 }

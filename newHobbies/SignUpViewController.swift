@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, ViewDelegate {
     @IBOutlet var genIDButton: UIButton!
     
     var viewModel: SignUpViewModel = SignUpViewModel()
@@ -14,7 +14,14 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func genIDWasTapped() {
-        viewModel.saveID()
+        viewModel.requestID()
+    }
+    
+    func onSuccess() {
         navigator.show(caller: self, destination: "selector")
+    }
+    
+    func onFailure() {
+        print("failed to retreive GUID")
     }
 }

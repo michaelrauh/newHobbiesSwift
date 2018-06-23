@@ -1,6 +1,7 @@
 target 'newHobbies' do
   use_frameworks!
   pod 'Alamofire', '~> 4.5'
+  pod 'CodableAlamofire'
 
   target 'newHobbiesTests' do
     inherit! :search_paths

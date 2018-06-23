@@ -10,4 +10,8 @@ class SignUpViewModel {
     func userHasID() -> Bool {
         return (defaults.string(forKey: "userID")) != nil
     }
+    
+    func requestID() {
+        
+    }
 }

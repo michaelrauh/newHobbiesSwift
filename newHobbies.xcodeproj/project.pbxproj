@@ -13,6 +13,10 @@
 		5A9926921FBBD46300662D97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A9926901FBBD46300662D97 /* Main.storyboard */; };
 		5A9926941FBBD46300662D97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A9926931FBBD46300662D97 /* Assets.xcassets */; };
 		5A9926971FBBD46300662D97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A9926951FBBD46300662D97 /* LaunchScreen.storyboard */; };
+		5ABF07C420DEB98000A8D93E /* Requestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF07C320DEB98000A8D93E /* Requestor.swift */; };
+		5ABF07C620DEB9C500A8D93E /* ResponseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF07C520DEB9C500A8D93E /* ResponseDelegate.swift */; };
+		5ABF07C820DEBA7A00A8D93E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF07C720DEBA7A00A8D93E /* Profile.swift */; };
+		5ABF07CA20DEBBD400A8D93E /* ViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF07C920DEBBD400A8D93E /* ViewDelegate.swift */; };
 		5AD8420D20C6127500CCDE7D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD8420C20C6127500CCDE7D /* SignUpViewModel.swift */; };
 		5AD8420F20C614DA00CCDE7D /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD8420E20C614DA00CCDE7D /* Navigator.swift */; };
 		5AD8421120C61B1D00CCDE7D /* SignUpViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD8421020C61B1D00CCDE7D /* SignUpViewControllerTest.swift */; };
@@ -43,6 +47,10 @@
 		5A9926981FBBD46300662D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A99269D1FBBD46300662D97 /* newHobbiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = newHobbiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A9926A31FBBD46300662D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5ABF07C320DEB98000A8D93E /* Requestor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestor.swift; sourceTree = "<group>"; };
+		5ABF07C520DEB9C500A8D93E /* ResponseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDelegate.swift; sourceTree = "<group>"; };
+		5ABF07C720DEBA7A00A8D93E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		5ABF07C920DEBBD400A8D93E /* ViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDelegate.swift; sourceTree = "<group>"; };
 		5AD8420C20C6127500CCDE7D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		5AD8420E20C614DA00CCDE7D /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		5AD8421020C61B1D00CCDE7D /* SignUpViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTest.swift; sourceTree = "<group>"; };
@@ -115,6 +123,10 @@
 				5A5082D320C60DD1007E3E92 /* SignUpViewController.swift */,
 				5AD8420C20C6127500CCDE7D /* SignUpViewModel.swift */,
 				5AD8420E20C614DA00CCDE7D /* Navigator.swift */,
+				5ABF07C320DEB98000A8D93E /* Requestor.swift */,
+				5ABF07C520DEB9C500A8D93E /* ResponseDelegate.swift */,
+				5ABF07C720DEBA7A00A8D93E /* Profile.swift */,
+				5ABF07C920DEBBD400A8D93E /* ViewDelegate.swift */,
 			);
 			path = newHobbies;
 			sourceTree = "<group>";
@@ -254,10 +266,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-newHobbies/Pods-newHobbies-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableAlamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -360,6 +374,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A5082D420C60DD1007E3E92 /* SignUpViewController.swift in Sources */,
+				5ABF07C820DEBA7A00A8D93E /* Profile.swift in Sources */,
+				5ABF07CA20DEBBD400A8D93E /* ViewDelegate.swift in Sources */,
+				5ABF07C420DEB98000A8D93E /* Requestor.swift in Sources */,
+				5ABF07C620DEB9C500A8D93E /* ResponseDelegate.swift in Sources */,
 				5AD8420F20C614DA00CCDE7D /* Navigator.swift in Sources */,
 				5A99268F1FBBD46300662D97 /* ViewController.swift in Sources */,
 				5AD8420D20C6127500CCDE7D /* SignUpViewModel.swift in Sources */,
