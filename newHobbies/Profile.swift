@@ -1,7 +1,7 @@
 import Foundation
 
-struct Profile: Decodable {
-    let GUID: String
+class Profile: Codable {
+    var GUID: String?
     
     private enum CodingKeys: String, CodingKey {
         case GUID
@@ -10,5 +10,5 @@ struct Profile: Decodable {
 
 class Session {
     static let shared = Session()
-    var GUID: String?
+    var profile: Profile?
 }

@@ -8,7 +8,11 @@ class SignUpViewController: UIViewController, ViewDelegate {
     var navigator: Navigator = Navigator()
     
     override func viewDidAppear(_ animated: Bool) {
+        viewModel.view = self as ViewDelegate
+        
         if (viewModel.userHasID()) {
+            Session.shared.profile = Profile()
+            Session.shared.profile?.GUID = viewModel.getID()
             navigator.show(caller: self, destination: "selector")
         }
     }

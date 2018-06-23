@@ -20,11 +20,13 @@ class SignUpViewControllerTests: QuickSpec {
                 subject.viewModel = viewModel
                 _ = subject.view
             }
+            
             describe("viewDidAppear") {
                 describe("when the view model has a user ID") {
                     
                     beforeEach {
                         viewModel.stub(function: "userHasID", return: true)
+                        viewModel.stub(function: "getID", return: "Sean")
                         subject.viewDidAppear(false)
                     }
                     
@@ -32,8 +34,12 @@ class SignUpViewControllerTests: QuickSpec {
                         expect(navigator.invoked(function: "show")).to(beTrue())
                     }
                     
+                    it("makes itself the delegate for the view model") {
+                        expect(viewModel.view).to(be(subject))
+                    }
+                    
                     it("saves the ID to the session") {
-                        
+                        expect(Session.shared.profile?.GUID).to(equal("Sean"))
                     }
                 }
                 
@@ -81,7 +87,7 @@ class MockViewModel: SignUpViewModel, Mock {
     
     var moxie = Moxie()
     
-    override func saveID() {
+    override func saveID(_ guid: String) {
         record(function: "saveID")
     }
     
@@ -91,5 +97,9 @@ class MockViewModel: SignUpViewModel, Mock {
     
     override func requestID() {
         record(function: "requestID")
+    }
+    
+    override func getID() -> String {
+        return value(forFunction: "getID") ?? ""
     }
 }

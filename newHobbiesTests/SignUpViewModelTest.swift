@@ -8,18 +8,74 @@ class SignUpViewModelTests: QuickSpec {
         describe("SignUpViewModel") {
             var subject: SignUpViewModel!
             var defaults: MockUserDefaults!
+            var view: MockViewDelegate!
             
             beforeEach {
+                view = MockViewDelegate()
                 subject = SignUpViewModel()
                 
                 defaults = MockUserDefaults()
                 
                 subject.defaults = defaults
+                subject.view = view
             }
-            describe("saveID") {
+            
+            describe("getID") {
+                it("returns the ID") {
+                    defaults.stub(function: "string", return: "ID")
+                    
+                    expect(subject.getID()).to(equal("ID"))
+                }
+            }
+            
+            describe("userHasID") {
+                it("returns true if user defaults has an entry at the key") {
+                    defaults.stub(function: "string", return: "GUID01")
+                    
+                    expect(subject.userHasID()).to(beTrue())
+                }
+                
+                it("returns false if user defaults has no entry at the key") {
+                    expect(subject.userHasID()).to(beFalse())
+                }
+            }
+            
+            describe("request ID") {
+                let mockRequestor = MockRequestor()
                 
                 beforeEach {
-                    subject.saveID()
+                    subject.requestor = mockRequestor
+                    subject.requestID()
+                }
+                
+                afterEach {
+                    subject.requestor = Requestor.shared
+                }
+                
+                it("requests a user ID") {
+                    expect(mockRequestor.invoked(function: "request")).to(beTrue())
+                    let params = mockRequestor.parameters(forFunction: "request")
+                    let delegate = params[0] as! SignUpViewModel
+                    let path = params[1] as! String
+                    expect(delegate).to(be(subject))
+                    expect(path).to(equal("profile"))
+                }
+            }
+            describe("onSuccess") {
+                var profile: Profile?
+                beforeEach {
+                    profile = Profile()
+                    profile?.GUID = "GUID01"
+                    
+                    subject.onSuccess(result: profile)
+                }
+                
+                it("saves the profile in the session") {
+                    expect(Session.shared.profile).to(be(profile))
+                }
+                
+                it("notifies the view") {
+                    expect(view.invoked(function: "onSuccess")).to(beTrue())
                 }
                 
                 it("saves The ID to user defaults") {
@@ -32,15 +88,15 @@ class SignUpViewModelTests: QuickSpec {
                     expect(key).to(equal("userID"))
                 }
             }
-            describe("userHasID") {
-                it("returns true if user defaults has an entry at the key") {
-                    defaults.stub(function: "string", return: "GUID01")
-                    
-                    expect(subject.userHasID()).to(beTrue())
+            
+            describe("onFailure") {
+                
+                beforeEach {
+                    subject.onFailure(error: MockError())
                 }
                 
-                it("returns false if user defaults has no entry at the key") {
-                    expect(subject.userHasID()).to(beFalse())
+                it("notifies the view") {
+                    expect(view.invoked(function: "onFailure")).to(beTrue())
                 }
             }
         }
@@ -58,4 +114,28 @@ class MockUserDefaults: UserDefaults, Mock {
     override func string(forKey defaultName: String) -> String? {
         return value(forFunction: "string")
     }
+}
+
+class MockRequestor: RequestorProtocol, Mock {
+    var moxie = Moxie()
+    
+    func request<T: ResponseDelegate>(withDelegate delegate: T, withPath path: String) {
+        record(function: "request", wasCalledWith: [delegate, path])
+    }
+}
+
+class MockViewDelegate: ViewDelegate, Mock {
+    var moxie = Moxie()
+    
+    func onSuccess() {
+        record(function: "onSuccess")
+    }
+    
+    func onFailure() {
+        record(function: "onFailure")
+    }
+}
+
+class MockError: Error {
+    
 }

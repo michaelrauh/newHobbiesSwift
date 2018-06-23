@@ -1,17 +1,36 @@
 import Foundation
 
-class SignUpViewModel {
-    var defaults: UserDefaults = UserDefaults.standard
+class SignUpViewModel: ResponseDelegate {
+    typealias T = Profile
     
-    func saveID() {
-        defaults.set("GUID01", forKey: "userID")
+    var defaults: UserDefaults = UserDefaults.standard
+    var requestor: RequestorProtocol = Requestor.shared
+    var view: ViewDelegate?
+    
+    func saveID(_ guid: String) {
+        defaults.set(guid, forKey: "userID")
     }
     
     func userHasID() -> Bool {
         return (defaults.string(forKey: "userID")) != nil
     }
     
+    func getID() -> String {
+        return defaults.string(forKey: "userID") ?? ""
+    }
+    
     func requestID() {
-        
+        requestor.request(withDelegate: self, withPath: "profile")
+    }
+    
+    func onSuccess(result: Profile?) {
+        Session.shared.profile = result
+        saveID(result?.GUID ?? "")
+        view?.onSuccess()
+    }
+    
+    func onFailure(error: Error) {
+        print("signUpResponseDelegate failure: " + error.localizedDescription)
+        view?.onFailure()
     }
 }
