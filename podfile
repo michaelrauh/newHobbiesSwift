@@ -1,0 +1,12 @@
+target 'newHobbies' do
+  use_frameworks!
+  pod 'Alamofire', '~> 4.5'
+
+  target 'newHobbiesTests' do
+    inherit! :search_paths
+    pod 'Moxie', '~> 0.1'
+    pod 'Quick'
+    pod 'Nimble'
+  end
+
+end

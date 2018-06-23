@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  newHobbies
-//
-//  Created by Michael Rauh on 11/14/17.
-//  Copyright © 2017 Surjective. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
