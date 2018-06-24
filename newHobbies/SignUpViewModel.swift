@@ -24,6 +24,8 @@ class SignUpViewModel: ResponseDelegate {
     }
     
     func onSuccess(result: Profile?) {
+        print("Got new profile from service: \(String(describing: result))")
+        
         Session.shared.profile = result
         saveID(result?.GUID ?? "")
         view?.onSuccess()

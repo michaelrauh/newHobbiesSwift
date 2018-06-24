@@ -12,14 +12,14 @@ class Requestor: RequestorProtocol {
     
     func request<T: ResponseDelegate>(withDelegate delegate: T, withPath path: String) {
         
-        let url = URL(string:"https://fakebasepath/\(path)/")!
+        let url = URL(string:"http://localhost:8080/\(path)")!
         
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
 
         Alamofire.request(url)
             .validate(statusCode: 200...299)
-            .responseDecodableObject(keyPath: "result.libraries", decoder: decoder) { (response: DataResponse<T.T>) in
+            .responseDecodableObject(decoder: decoder) { (response: DataResponse<T.T>) in
                 
                 switch response.result {
                 case .success:
