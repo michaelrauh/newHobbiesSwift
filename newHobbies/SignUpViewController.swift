@@ -13,7 +13,7 @@ class SignUpViewController: UIViewController, ViewDelegate {
         if (viewModel.userHasID()) {
             Session.shared.profile = Profile()
             Session.shared.profile?.GUID = viewModel.getID()
-            navigator.show(caller: self, destination: "selector")
+            navigator.show(caller: self, destination: "hobbiesViewController")
         }
     }
     
@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController, ViewDelegate {
     }
     
     func onSuccess() {
-        navigator.show(caller: self, destination: "selector")
+        navigator.show(caller: self, destination: "hobbiesViewController")
     }
     
     func onFailure() {

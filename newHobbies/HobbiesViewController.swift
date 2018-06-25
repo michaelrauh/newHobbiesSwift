@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class HobbiesViewController: UIViewController {
     
     @IBOutlet var label: UILabel!
     var hobbies = ["climbing", "bouldering", "guitar", "listening to guitar", "playing guitar"]
@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         disliked.append(current)
     }
     
-    @IBAction func labelSwiped(_ sender: UISwipeGestureRecognizer) {
+    @IBAction func labelSwipedRight(_ sender: UISwipeGestureRecognizer) {
         let current = hobbies.popLast() ?? "all out"
         label.text = current
         liked.append(current)
