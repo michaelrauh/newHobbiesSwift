@@ -1,25 +1,32 @@
 import UIKit
 
-class HobbiesViewController: UIViewController {
-    
+class HobbiesViewController: UIViewController, ViewDelegate {
     @IBOutlet var label: UILabel!
-    var hobbies = ["climbing", "bouldering", "guitar", "listening to guitar", "playing guitar"]
-    var liked: [String] = []
-    var disliked: [String] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var navigator = Navigator()
+    var viewModel = HobbiesViewModel()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.getAllHobbies()
     }
     
     @IBAction func labelSwipedLeft(_ sender: UISwipeGestureRecognizer) {
-        let current = hobbies.popLast() ?? "all out"
-        label.text = current
-        disliked.append(current)
+//        let current = hobbies.popLast() ?? "all out"
+//        label.text = current
+//        disliked.append(current)
     }
     
     @IBAction func labelSwipedRight(_ sender: UISwipeGestureRecognizer) {
-        let current = hobbies.popLast() ?? "all out"
-        label.text = current
-        liked.append(current)
+//        let current = hobbies.popLast() ?? "all out"
+//        label.text = current
+//        liked.append(current)
+    }
+    
+    func onSuccess() {
+        
+    }
+    
+    func onFailure() {
+        print("failure in HobbiesViewController!")
     }
 }
