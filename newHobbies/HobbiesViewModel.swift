@@ -1,4 +1,5 @@
 class HobbiesViewModel {
+    
     func getAllHobbies() {
         
     }

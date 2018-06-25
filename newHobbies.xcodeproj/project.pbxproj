@@ -16,6 +16,7 @@
 		5A4AC1DE20E16982008CEE01 /* HobbiesViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AC1DD20E16982008CEE01 /* HobbiesViewControllerTest.swift */; };
 		5A4AC1E020E169CC008CEE01 /* MockHobbiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AC1DF20E169CC008CEE01 /* MockHobbiesViewModel.swift */; };
 		5A4AC1E220E169FC008CEE01 /* HobbiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AC1E120E169FC008CEE01 /* HobbiesViewModel.swift */; };
+		5A4AC1E420E17A75008CEE01 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AC1E320E17A75008CEE01 /* Session.swift */; };
 		5A5082D420C60DD1007E3E92 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5082D320C60DD1007E3E92 /* SignUpViewController.swift */; };
 		5A99268D1FBBD46300662D97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A99268C1FBBD46300662D97 /* AppDelegate.swift */; };
 		5A99268F1FBBD46300662D97 /* HobbiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A99268E1FBBD46300662D97 /* HobbiesViewController.swift */; };
@@ -55,6 +56,7 @@
 		5A4AC1DD20E16982008CEE01 /* HobbiesViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbiesViewControllerTest.swift; sourceTree = "<group>"; };
 		5A4AC1DF20E169CC008CEE01 /* MockHobbiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHobbiesViewModel.swift; sourceTree = "<group>"; };
 		5A4AC1E120E169FC008CEE01 /* HobbiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbiesViewModel.swift; sourceTree = "<group>"; };
+		5A4AC1E320E17A75008CEE01 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		5A5082D320C60DD1007E3E92 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5A9926891FBBD46300662D97 /* newHobbies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newHobbies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A99268C1FBBD46300662D97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				5ABF07C720DEBA7A00A8D93E /* Profile.swift */,
 				5ABF07C920DEBBD400A8D93E /* ViewDelegate.swift */,
 				5A4AC1E120E169FC008CEE01 /* HobbiesViewModel.swift */,
+				5A4AC1E320E17A75008CEE01 /* Session.swift */,
 			);
 			path = newHobbies;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				5ABF07C620DEB9C500A8D93E /* ResponseDelegate.swift in Sources */,
 				5A4AC1E220E169FC008CEE01 /* HobbiesViewModel.swift in Sources */,
 				5AD8420F20C614DA00CCDE7D /* Navigator.swift in Sources */,
+				5A4AC1E420E17A75008CEE01 /* Session.swift in Sources */,
 				5A99268F1FBBD46300662D97 /* HobbiesViewController.swift in Sources */,
 				5AD8420D20C6127500CCDE7D /* SignUpViewModel.swift in Sources */,
 				5A99268D1FBBD46300662D97 /* AppDelegate.swift in Sources */,
