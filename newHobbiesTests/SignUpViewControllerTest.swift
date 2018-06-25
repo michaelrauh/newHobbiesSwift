@@ -8,13 +8,13 @@ class SignUpViewControllerTests: QuickSpec {
         describe("SignUpViewController") {
             var subject: SignUpViewController!
             var navigator: MockNavigator!
-            var viewModel: MockViewModel!
+            var viewModel: MockSignUpViewModel!
             
             beforeEach {
                 subject = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "signUpViewController") as! SignUpViewController
                 
                 navigator = MockNavigator()
-                viewModel = MockViewModel()
+                viewModel = MockSignUpViewModel()
                 
                 subject.navigator = navigator
                 subject.viewModel = viewModel
@@ -71,35 +71,5 @@ class SignUpViewControllerTests: QuickSpec {
                 }
             }
         }
-    }
-}
-
-class MockNavigator: Navigator, Mock {
-    
-    var moxie = Moxie()
-    
-    override func show(caller: UIViewController, destination: String) {
-        record(function: "show", wasCalledWith: [caller, destination])
-    }
-}
-
-class MockViewModel: SignUpViewModel, Mock {
-    
-    var moxie = Moxie()
-    
-    override func saveID(_ guid: String) {
-        record(function: "saveID")
-    }
-    
-    override func userHasID() -> Bool {
-        return value(forFunction: "userHasID") ?? false
-    }
-    
-    override func requestID() {
-        record(function: "requestID")
-    }
-    
-    override func getID() -> String {
-        return value(forFunction: "getID") ?? ""
     }
 }
