@@ -11,19 +11,17 @@ class HobbiesViewController: UIViewController, ViewDelegate {
     }
     
     @IBAction func labelSwipedLeft(_ sender: UISwipeGestureRecognizer) {
-//        let current = hobbies.popLast() ?? "all out"
-//        label.text = current
-//        disliked.append(current)
+        viewModel.dislikedHobbie(label.text ?? "")
+        label.text = viewModel.getNextHobbieText()
     }
     
     @IBAction func labelSwipedRight(_ sender: UISwipeGestureRecognizer) {
-//        let current = hobbies.popLast() ?? "all out"
-//        label.text = current
-//        liked.append(current)
+        viewModel.likedHobbie(label.text ?? "")
+        label.text = viewModel.getNextHobbieText()
     }
     
     func onSuccess() {
-        
+        label.text = viewModel.getNextHobbieText()
     }
     
     func onFailure() {
