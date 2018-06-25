@@ -20,7 +20,7 @@ class SignUpViewModel: ResponseDelegate {
     }
     
     func requestID() {
-        requestor.request(withDelegate: self, withPath: "profile")
+        requestor.request(withDelegate: self, withPath: "profile", withMethod: .get)
     }
     
     func onSuccess(result: Profile?) {
