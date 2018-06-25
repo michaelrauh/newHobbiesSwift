@@ -48,10 +48,6 @@ class SignUpViewModelTests: QuickSpec {
                     subject.requestID()
                 }
                 
-                afterEach {
-                    subject.requestor = Requestor.shared
-                }
-                
                 it("requests a user ID") {
                     expect(mockRequestor.invoked(function: "request")).to(beTrue())
                     let params = mockRequestor.parameters(forFunction: "request")
