@@ -7,6 +7,7 @@ class HobbiesViewController: UIViewController, ViewDelegate {
     var viewModel = HobbiesViewModel()
     
     override func viewDidAppear(_ animated: Bool) {
+        viewModel.view = self
         viewModel.getAllHobbies()
     }
     

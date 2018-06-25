@@ -26,6 +26,12 @@ class HobbiesViewControllerTest: QuickSpec {
                     subject.viewDidAppear(false)
                     expect(viewModel.invoked(function: "getAllHobbies")).to(beTrue())
                 }
+                
+                it("sets itself as the viewdelegate for the viewModel") {
+                    subject.viewDidAppear(false)
+                    
+                    expect(viewModel.view).to(be(subject))
+                }
             }
             
             describe("onSuccess"){

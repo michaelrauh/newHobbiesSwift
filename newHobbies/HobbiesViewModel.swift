@@ -1,5 +1,7 @@
 class HobbiesViewModel {
     
+    var view: ViewDelegate?
+    
     func getAllHobbies() {
         
     }
